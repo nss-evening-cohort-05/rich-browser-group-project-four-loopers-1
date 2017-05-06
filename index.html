@@ -11,9 +11,9 @@
 </head>
 
 <body>
+
   
   <h1>Tot &amp; Potatoes</h1>
-
   <div class="login-container" id="login-display">
     <div class="container col-xs-4 col-xs-offset-4" id="login-container">
       <h3 class="text-center form-spacing">Please Login or Register</h3>
@@ -27,17 +27,49 @@
 
   <div class="row input-holder">
     <input type="text" class="col-xs-4 col-xs-offset-4" id="movieSearch">
+
+  <!-- Wrapper input holder and button in own container TF -->
+  <div class="container">
+    <div class="row input-holder">
+      <input type="text" class="col-xs-4 col-xs-offset-4" id="movieSearch">
+    </div>
+    <div class="row col-xs-4 col-xs-offset-4">
+      <button class="btn btn-danger btn-lg col-xs-12" id="getMovie">Get Movie</button>
+    </div>
   </div>
-  <div class="row col-xs-4 col-xs-offset-4">
-    <button class="btn btn-danger btn-lg col-xs-12" id="getMovie">Get Movie</button>
+  <!-- TF -->
+
+  <div class="container movie-container" id="movie-container">
+    <div class="row seen-nav nav">
+      <ul class="nav nav-tabs">
+        <li role="presentation" class="active"><a href="#">Seen</a></li>
+        <li role="presentation"><a href="#">Not Seen</a></li>
+      </ul>
+      <div class="col-xs-6 col-xs-offset-6" id="">
+
+      </div>
+    </div>
+    <div class="row" id="movies-seen">
+      <div class="col-xs-12 movies-lists" id="">
+
+      </div>
+    </div>
+    <div class="row" id="movies-not-seen">
+      <div class="col-xs-12 movies-lists" id="">
+
+      </div>
+    </div>
   </div>
+
+  <!-- /// -->
+
 
 
   <!-- Third Party Scripts -->
   <script src="https://www.gstatic.com/firebasejs/3.9.0/firebase.js"></script>
   <script type="text/javascript" src="./lib/bower_components/jquery/dist/jquery.js"></script>
   <script type="text/javascript" src="./lib/bower_components/bootstrap/dist/js/bootstrap.js"></script>
-  
+
   <!-- Personal Scripts -->
   <script type="text/javascript" src="./javascripts/firebaseAuth.js"></script>
   <script type="text/javascript" src="./javascripts/movieApi.js"></script>
