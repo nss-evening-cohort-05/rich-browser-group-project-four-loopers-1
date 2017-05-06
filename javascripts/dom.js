@@ -2,19 +2,40 @@
 var movieAPI = ((movie) => {
 
   movie.writeDom = (key) => {
-    movieAPI.getMovie(key).then((results) => {
-      let movies = results;
+    //movieAPI.getMovie(key).then((results) => {
+      let movies = key;
       let seen = "";
       let notSeen = "";
 
+      console.log("writeeing to the dom", movies);
+
+
       movies.forEach((movie) => {
-        if (movie.isCompleted){
+        if (movie.isCompleted === true){
           seen += `<div class="col-xs-4 card-container">`;
-          seen += ``;
+          seen += `<span class="glyphicon glyphicon-remove pull-right"></span>`;
+          seen += `<img src="http://forkliftsystems.com.au/wp-content/uploads/2015/04/placeholder-200x200.png">`;
+          seen += `<h3>${movie.Title}</h3>`;
+          seen += `<p>${movie.Plot}</p>`;
+          seen += `<p>${movie.Actors}`;
+          seen += `<p>${movie.Year}</p>`;
+          seen += `</div>`;
+
+        }else{
+          notSeen += `<div class="col-xs-4 card-container">`;
+          notSeen += `<span class="glyphicon glyphicon-remove pull-right"></span>`;
+          notSeen += `<img src="http://forkliftsystems.com.au/wp-content/uploads/2015/04/placeholder-200x200.png">`
+          notSeen += `<h3>${movie.Title}</h3>`;
+          notSeen += `<p>${movie.Plot}</p>`;
+          notSeen += `<p>${movie.Actors}`;
+          notSeen += `<p>${movie.Year}</p>`;
+          notSeen += `</div>`;
         }
+        $('#movies-seen').html(seen);
+        $('#movies-cd ~/W not-seen').html(notSeen);
       })
-    })
-    
+    //})
+
     // forEach
   }
 
