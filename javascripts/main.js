@@ -20,9 +20,6 @@ $(document).ready(function() {
     });
   });
 
-<<<<<<< Updated upstream
-
-=======
       $("#loginButton").click(() => {
         let email = $('#inputEmail').val();
         let password = $("#inputPassword").val();
@@ -49,6 +46,6 @@ $(document).ready(function() {
         let password = $("").val();
         let username = $("").val();
     };
->>>>>>> Stashed changes
+
 
 });
