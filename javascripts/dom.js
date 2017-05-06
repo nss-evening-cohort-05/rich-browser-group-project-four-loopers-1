@@ -1,9 +1,22 @@
- var movieAPI = ((movie) => {
 
- 	movie.writeDom = () => {
- 		console.log("made it to writeDom function");
+var movieAPI = ((movie) => {
 
- 	}
+  movie.writeDom = (key) => {
+    movieAPI.getMovie(key).then((results) => {
+      let movies = results;
+      let seen = "";
+      let notSeen = "";
+
+      movies.forEach((movie) => {
+        if (movie.isCompleted){
+          seen += `<div class="col-xs-4 card-container">`;
+          seen += ``;
+        }
+      })
+    })
+    
+    // forEach
+  }
 
 
     movie.createLogoutButton = (apiKey) => {
