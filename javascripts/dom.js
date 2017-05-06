@@ -2,7 +2,7 @@
 var movieAPI = ((movie) => {
 
   movie.writeDom = (key) => {
-    //movieAPI.getMovie(key).then((results) => {
+
       let movies = key;
       let seen = "";
       let notSeen = "";
@@ -32,11 +32,9 @@ var movieAPI = ((movie) => {
           notSeen += `</div>`;
         }
         $('#movies-seen').html(seen);
-        $('#movies-cd ~/W not-seen').html(notSeen);
+        $('#movies-cd not-seen').html(notSeen);
       })
-    //})
 
-    // forEach
   }
 
 
