@@ -23,6 +23,7 @@ $(document).ready(function() {
     $("#loginButton").click(() => {
         let email = $('#inputEmail').val();
         let password = $("#inputPassword").val();
+        let username = $("#inputUsername").val();
 
         let user = {
             email,
@@ -49,6 +50,7 @@ $(document).ready(function() {
             email,
             password
         };
+        console.log("username: ", username);
         movieAPI.registerUser(user).then((response) => {
             let newUser = {
                 uid: response.uid,
@@ -60,6 +62,7 @@ $(document).ready(function() {
                     $('#login-container').addClass('hide');
                     $('.main-container').removeClass('hide');
                     movieAPI.writeDom(apiKeys);
+                    movieAPI.createLogoutButton(apiKeys);
                 }).catch((error) => {
                     console.log("error in loginUser: ", error);
                 });
