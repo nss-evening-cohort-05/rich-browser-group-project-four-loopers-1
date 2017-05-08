@@ -19,6 +19,13 @@ var movieAPI = ((movie) => {
           seen += `<p>${movie.Plot}</p>`;
           seen += `<p>${movie.Actors}`;
           seen += `<p>${movie.Year}</p>`;
+          seen += `<div class="ratingSystem container">`
+          seen += `<input name="star1" type="radio" class="star"/>`
+          seen += `<input name="star2" type="radio" class="star"/>`
+          seen += `<input name="star3" type="radio" class="star"/>`
+          seen += `<input name="star4" type="radio" class="star"/>`
+          seen += `<input name="star2" type="radio" class="star"/>`
+          seen += `</div>`
           seen += `</div>`;
         } else {
           notSeen += `<div class="col-xs-4 card-container">`;
