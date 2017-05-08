@@ -19,6 +19,8 @@ var movieAPI = ((movie) => {
           seen += `<p>${movie.Plot}</p>`;
           seen += `<p>${movie.Actors}`;
           seen += `<p>${movie.Year}</p>`;
+          seen += ` <div class="btn-group" data-toggle="buttons"><label class="btn btn-primary active"><input type="checkbox" checked autocomplete="off">Seen!</label>`;
+          seen += ` <label class="btn btn-primary"><input type="checkbox" autocomplete="off">Not Seen</label></div>`;
           seen += `<div class="ratingSystem container">`;
           seen += `<h6>Rating</h6>`;
           seen += `<input name="star" type="radio" class="star"/>`;
