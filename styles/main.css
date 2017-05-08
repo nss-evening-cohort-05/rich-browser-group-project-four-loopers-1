@@ -1,7 +1,28 @@
 body {
-  color: blue; }
+  color: #0074D9;
+  width: 100%;
+  height: 100%;
+  background: url("http://az616578.vo.msecnd.net/files/2016/03/13/635935072128716536-2118859707_reinventingpotato_hero1.jpg");
+  background-attachment: fixed;
+  background-position: center center;
+  background-size: cover; }
+
+.login-container {
+  background-color: #DDDDDD; }
 
 .input-holder input {
   margin-top: 20px;
   margin-bottom: 20px;
-  background-color: yellow; }
+  background-color: #3D9970; }
+
+.jumbotron {
+  opacity: 0.8; }
+
+h1 {
+  font-weight: 900;
+  display: flex;
+  align-content: center;
+  justify-content: center; }
+
+button {
+  color: #39CCCC; }
