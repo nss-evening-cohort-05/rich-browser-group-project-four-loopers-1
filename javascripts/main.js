@@ -42,7 +42,7 @@ $(document).ready(function() {
 	    }).catch((error) => {
 	      console.log("getMovie Error", error);
 	    });
-  }
+  };
 
     $("#loginButton").click(() => {
         let email = $('#inputEmail').val();
