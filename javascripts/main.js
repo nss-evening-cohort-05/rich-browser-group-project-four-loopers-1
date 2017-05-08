@@ -31,7 +31,6 @@ $(document).ready(function() {
     }).catch((error) => {
       console.log("getMovie Error", error);
     });
-
   		getMovie();
   });
 
@@ -58,7 +57,7 @@ $(document).ready(function() {
             clearLogin();
             $('#login-container').addClass('hide');
             $('.main-container').removeClass('hide');
-         //   movieAPI.writeDom(apiKeys);
+           movieAPI.writeDom(apiKeys);
 
             movieAPI.createLogoutButton(apiKeys);
         }).catch((error) => {

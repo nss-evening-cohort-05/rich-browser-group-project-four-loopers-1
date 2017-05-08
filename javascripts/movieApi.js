@@ -13,6 +13,23 @@ var movieAPI = (function (movieCall) {
 		});
 	};
 
+	movieCall.getUserSavedMovies = (apiKeys) => {
+		let items = [];
+		return new Promise((resolve, reject) => {
+			let uid = movieAPI.credentialsCurrentUser().uid;
+			$.ajax(`${apiKeys.databaseURL}/items.json?orderBy="uid"&equalTo="${uid}"`)
+			.done(data => {
+				let response = data;
+				Object.keys(response).forEach((key) => {
+					response[key].id = key;
+					items.push(response[key]);
+				});
+				resolve(items);
+			})
+			.fail(error => {reject(error);});
+		});
+	};
+
 	movieCall.addMovie = (apiKeys, newMovie) => {
 		newMovie.uid = movieAPI.credentialsCurrentUser().uid;
 		return new Promise ((resolve, reject) => {
