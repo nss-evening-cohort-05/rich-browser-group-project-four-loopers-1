@@ -12,13 +12,12 @@
 
 <body>
 
-  <h1>Tot &amp; Potatoes</h1>
-
+  <h1 class="jumbotron">Tot &amp; Potatoes</h1>
   <div id="logout-container"></div>
 
   <div class="login-container" id="login-display">
     <div class="container col-xs-4 col-xs-offset-4" id="login-container">
-      <h3 class="text-center form-spacing">Please Login or Register</h3>
+      <h3 class="text-center form-spacing jumbotron">Please Login or Register</h3>
       <input type="email" id="inputEmail" class="form-control form-spacing" placeholder="Email Address" required autofocus>
       <input type="password" id="inputPassword" class="form-control form-spacing" placeholder="Password" required >
       <input type="text" id="inputUsername" class="form-control form-spacing" placeholder="Username" required>
@@ -35,6 +34,15 @@
       <div class="row col-xs-4 col-xs-offset-4">
         <button class="btn btn-danger btn-lg col-xs-12" id="getMovie">Get Movie</button>
       </div>
+      
+  <!-- Wrapper input holder and button in own container TF -->
+  <div class="container">
+    <div class="row input-holder">
+      <input type="text" class="col-xs-4 col-xs-offset-4" id="movieSearch">
+    </div>
+    <div class="row col-xs-4 col-xs-offset-4">
+      <button class="btn btn-danger btn-lg col-xs-12" id="getMovie">Get Movie</button>
+
     </div>
     <div class="row seen-nav nav">
       <ul class="nav nav-tabs">

@@ -34,15 +34,16 @@ $(document).ready(function() {
         // getMovie();									// maybe don't want to do this
     });
 
-    let getMovieFromDb = (event) => {
-        let movieTitle = $('#movieSearch').val();
-        movieAPI.getMovie(movieTitle).then((results) => {
-            movieAPI.writeDom(results);
-            console.log("Movie API results:", results);
-        }).catch((error) => {
-            console.log("getMovie Error", error);
-        });
-    }
+
+  let getMovieFromDb = (event) => {
+  	let movieTitle = $('#movieSearch').val();
+	    movieAPI.getMovie(movieTitle).then((results) =>{
+		movieAPI.writeDom(results);
+	      console.log("Movie API results:", results);
+	    }).catch((error) => {
+	      console.log("getMovie Error", error);
+	    });
+  };
 
     $("#loginButton").click(() => {
         let email = $('#inputEmail').val();
