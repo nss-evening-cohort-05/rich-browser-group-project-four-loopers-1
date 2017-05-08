@@ -59,7 +59,6 @@ var movieAPI = ((oldFirebase) => {
         });
     };
 
-
   oldFirebase.credentialsCurrentUser = () => {
     return firebase.auth().currentUser;
   };

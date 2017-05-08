@@ -9,7 +9,6 @@ var movieAPI = ((movie) => {
 
       console.log("writeeing to the dom", movies);
 
-
       movies.forEach((movie) => {
         if (movie.isCompleted === true){
           seen += `<div class="col-xs-4 card-container">`;
@@ -34,9 +33,7 @@ var movieAPI = ((movie) => {
         $('#movies-seen').html(seen);
         $('#movies-cd not-seen').html(notSeen);
       })
-
   }
-
 
     movie.createLogoutButton = (apiKey) => {
         let uid = movieAPI.credentialsCurrentUser().uid;
