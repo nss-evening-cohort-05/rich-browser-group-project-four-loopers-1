@@ -12,6 +12,7 @@ var movieAPI = ((oldFirebase) => {
         });
     };
 
+
     oldFirebase.loginUser = (credentials) => {
         return new Promise((resolve, reject) => {
             firebase.auth().signInWithEmailAndPassword(credentials.email, credentials.password)
@@ -24,6 +25,7 @@ var movieAPI = ((oldFirebase) => {
         });
         // movieAPI.createLogoutButton(apiKeys);
     };
+
 
     oldFirebase.addUser = (keys, newUser) => {
         return new Promise((resolve, reject) => {
@@ -59,25 +61,9 @@ var movieAPI = ((oldFirebase) => {
         });
     };
 
-    oldFirebase.addMovie = (keys, newMoive) => {
-       // ?????? newMovie.uid = FbApi.credentialsCurrentUser().uid;
-        return new Promise((resolve, reject) => {
-            $.ajax({
-                method: 'POST',
-                url: `${keys.databaseURL}/items.json`;
-                data: JSON.stringify(newMovie)
-            }).done(() => {
-                resolve();
-            }).fail((error) => {
-                reject(error);
-            });
-        });
-    };
-
-    
-
-
-
+  oldFirebase.credentialsCurrentUser = () => {
+    return firebase.auth().currentUser;
+  };
 
 
 

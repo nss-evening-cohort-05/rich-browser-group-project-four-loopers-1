@@ -11,6 +11,12 @@ let apiKeys = {};
 
 $(document).ready(function() {
 
+	$("body").keyup(function() {
+		if (window.event.keyCode === 13) {
+ 			getMovie();
+		}
+	 });
+
   $('#getMovie').click((event) => {
     let movieTitle = $('#movieSearch').val();
     let movieActors = event.Actors;
@@ -25,13 +31,24 @@ $(document).ready(function() {
     }).catch((error) => {
       console.log("getMovie Error", error);
     });
+
+  		getMovie();
   });
+
+  let getMovie = (event) => {
+  	let movieTitle = $('#movieSearch').val();
+	    movieAPI.getMovie(movieTitle).then((results) =>{
+		movieAPI.writeDom(results);
+	      console.log("Movie API results:", results);
+	    }).catch((error) => {
+	      console.log("getMovie Error", error);
+	    });
+  }
 
     $("#loginButton").click(() => {
         let email = $('#inputEmail').val();
         let password = $("#inputPassword").val();
         let username = $("#inputUsername").val();
-
         let user = {
             email,
             password
@@ -42,6 +59,7 @@ $(document).ready(function() {
             $('#login-container').addClass('hide');
             $('.main-container').removeClass('hide');
          //   movieAPI.writeDom(apiKeys);
+
             movieAPI.createLogoutButton(apiKeys);
         }).catch((error) => {
             console.log("error in loginUser: ", error);

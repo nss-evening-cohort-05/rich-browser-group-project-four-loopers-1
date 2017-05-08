@@ -35,9 +35,7 @@ var movieAPI = ((movie) => {
         $('#movies-seen').html(seen);
         $('#movies-cd not-seen').html(notSeen);
       });
-
   };
-
 
     movie.createLogoutButton = (apiKey) => {
         let uid = movieAPI.credentialsCurrentUser().uid;
