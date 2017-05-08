@@ -20,11 +20,17 @@ var movieAPI = ((movie) => {
           seen += `<p>${movie.Actors}`;
           seen += `<p>${movie.Year}</p>`;
           seen += `<div class="ratingSystem container">`
-          seen += `<input name="star1" type="radio" class="star"/>`
-          seen += `<input name="star2" type="radio" class="star"/>`
-          seen += `<input name="star3" type="radio" class="star"/>`
-          seen += `<input name="star4" type="radio" class="star"/>`
-          seen += `<input name="star2" type="radio" class="star"/>`
+          seen += `<h6>Rating</h6>`
+          seen += `<input name="star" type="radio" class="star"/>`
+          seen += `<label class="star-1" for="star-1">1</label>`
+          seen += `<input name="star" type="radio" class="star"/>`
+          seen += `<label class="star-1" for="star-1">2</label>`
+          seen += `<input name="star" type="radio" class="star"/>`
+          seen += `<label class="star-1" for="star-1">3</label>`
+          seen += `<input name="star" type="radio" class="star"/>`
+          seen += `<label class="star-1" for="star-1">4</label>`
+          seen += `<input name="star" type="radio" class="star"/>`
+          seen += `<label class="star-1" for="star-1">5</label>`
           seen += `</div>`
           seen += `</div>`;
         } else {
