@@ -13,7 +13,7 @@ $(document).ready(function() {
 
 	$("body").keyup(function() {
 		if (window.event.keyCode === 13) {
- 			getMovie();
+ 			getMovieFromDb();
 		}
 	 });
 
@@ -21,20 +21,20 @@ $(document).ready(function() {
     let movieTitle = $('#movieSearch').val();
     let movieActors = event.Actors;
     let newMovie = {
-        isCompleted: false,
+        isSeen: false,
         movie: movieTitle,
         actors: movieActors
     };
     movieAPI.getMovie(movieTitle).then((results) =>{
-			movieAPI.writeDom(results);
       console.log("Movie API results:", results);
+			movieAPI.addMovie(apiKeys, results);						// call post movie to firebase here
     }).catch((error) => {
       console.log("getMovie Error", error);
     });
-  		getMovie();
+  		// getMovie();									// maybe don't want to do this
   });
 
-  let getMovie = (event) => {
+  let getMovieFromDb = (event) => {
   	let movieTitle = $('#movieSearch').val();
 	    movieAPI.getMovie(movieTitle).then((results) =>{
 		movieAPI.writeDom(results);

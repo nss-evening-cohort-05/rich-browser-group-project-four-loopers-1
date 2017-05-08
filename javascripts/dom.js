@@ -7,7 +7,6 @@ var movieAPI = ((movie) => {
 
       let seen = "";
       let notSeen = "";
-      // let movieArray = [key];
 
     movieAPI.getUserSavedMovies(key).then((results) => {
 
@@ -21,8 +20,7 @@ var movieAPI = ((movie) => {
           seen += `<p>${movie.Actors}`;
           seen += `<p>${movie.Year}</p>`;
           seen += `</div>`;
-
-        }else{
+        } else {
           notSeen += `<div class="col-xs-4 card-container">`;
           notSeen += `<span class="glyphicon glyphicon-remove pull-right"></span>`;
           notSeen += `<img src="http://forkliftsystems.com.au/wp-content/uploads/2015/04/placeholder-200x200.png">`;
