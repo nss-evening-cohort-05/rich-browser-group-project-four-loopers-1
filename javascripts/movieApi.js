@@ -13,8 +13,8 @@ var movieAPI = (function (movieCall) {
 		});
 	};
 
-	oldFbApi.addMovie = (apiKeys, newTodo) => {
-		newMovie.uid = FbApi.credentialsCurrentUser().uid;
+	movieCall.addMovie = (apiKeys, newMovie) => {
+		newMovie.uid = movieAPI.credentialsCurrentUser().uid;
 		return new Promise ((resolve, reject) => {
 			$.ajax({
 				method: "POST",
@@ -30,7 +30,7 @@ var movieAPI = (function (movieCall) {
 		});
 	};
 
-	oldFbApi.deleteMovie = (apiKeys, id) => {
+	movieCall.deleteMovie = (apiKeys, id) => {
 		return new Promise ((resolve, reject) => {
 			$.ajax({
 				method: "DELETE",
@@ -45,8 +45,8 @@ var movieAPI = (function (movieCall) {
 		});
 	};
 
-	oldFbApi.editMovie = (apiKeys, movie, id) => {
-		movie.uid = FbApi.credentialsCurrentUser().uid;
+	movieCall.editMovie = (apiKeys, movie, id) => {
+		movie.uid = movieAPI.credentialsCurrentUser().uid;
 		return new Promise ((resolve, reject) => {
 			$.ajax({
 				method: "PUT",

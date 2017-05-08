@@ -22,7 +22,6 @@ var movieAPI = ((oldFirebase) => {
         reject(error);
       });
     });
-    // movieAPI.createLogoutButton(apiKeys);
   };
 
   oldFirebase.addUser = (keys, newUser) => {
