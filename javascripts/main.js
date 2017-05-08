@@ -13,6 +13,12 @@ $(document).ready(function() {
 
   $('#getMovie').click((event) => {
     let movieTitle = $('#movieSearch').val();
+    let movieActors = event.Actors;
+    let newMovie = {
+        isCompleted: false,
+        movie: movieTitle,
+        actors: movieActors
+    };
     movieAPI.getMovie(movieTitle).then((results) =>{
 			movieAPI.writeDom(results);
       console.log("Movie API results:", results);
@@ -35,7 +41,7 @@ $(document).ready(function() {
             clearLogin();
             $('#login-container').addClass('hide');
             $('.main-container').removeClass('hide');
-            movieAPI.writeDom(apiKeys);
+         //   movieAPI.writeDom(apiKeys);
             movieAPI.createLogoutButton(apiKeys);
         }).catch((error) => {
             console.log("error in loginUser: ", error);
@@ -81,7 +87,7 @@ $(document).ready(function() {
         $('#login-container').removeClass('hide');
         $('.main-container').addClass('hide');
         $('#logout-container').html("");
-    })
+    });
 
     let clearLogin = () => {
     	$("#inputEmail").val("");
