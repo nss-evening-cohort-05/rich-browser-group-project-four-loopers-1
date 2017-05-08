@@ -3,15 +3,14 @@ var movieAPI = ((movie) => {
 
   movie.writeDom = (key) => {
 
-      let movies = key;
+  	console.log("user keys", key);
+
       let seen = "";
       let notSeen = "";
-      let movieArray = [movies];
 
-      console.log("writing to the dom", movieArray);
+    movieAPI.getUserSavedMovies(key).then((results) => {
 
-
-      movieArray.forEach((movie) => {
+      results.forEach((movie) => {
         if (movie.isSeen === true){
           seen += `<div class="col-xs-4 card-container">`;
           seen += `<span class="glyphicon glyphicon-remove pull-right"></span>`;
@@ -21,8 +20,7 @@ var movieAPI = ((movie) => {
           seen += `<p>${movie.Actors}`;
           seen += `<p>${movie.Year}</p>`;
           seen += `</div>`;
-
-        }else{
+        } else {
           notSeen += `<div class="col-xs-4 card-container">`;
           notSeen += `<span class="glyphicon glyphicon-remove pull-right"></span>`;
           notSeen += `<img src="http://forkliftsystems.com.au/wp-content/uploads/2015/04/placeholder-200x200.png">`;
@@ -35,6 +33,7 @@ var movieAPI = ((movie) => {
         $('#movies-seen').html(seen);
         $('#movies-cd not-seen').html(notSeen);
       });
+    });
   };
 
     movie.createLogoutButton = (apiKey) => {
