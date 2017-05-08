@@ -6,11 +6,13 @@ var movieAPI = ((movie) => {
       let movies = key;
       let seen = "";
       let notSeen = "";
+      let movieArray = [movies];
 
-      console.log("writeeing to the dom", movies);
+      console.log("writing to the dom", movieArray);
 
-      movies.forEach((movie) => {
-        if (movie.isCompleted === true){
+
+      movieArray.forEach((movie) => {
+        if (movie.isSeen === true){
           seen += `<div class="col-xs-4 card-container">`;
           seen += `<span class="glyphicon glyphicon-remove pull-right"></span>`;
           seen += `<img src="http://forkliftsystems.com.au/wp-content/uploads/2015/04/placeholder-200x200.png">`;
@@ -23,7 +25,7 @@ var movieAPI = ((movie) => {
         }else{
           notSeen += `<div class="col-xs-4 card-container">`;
           notSeen += `<span class="glyphicon glyphicon-remove pull-right"></span>`;
-          notSeen += `<img src="http://forkliftsystems.com.au/wp-content/uploads/2015/04/placeholder-200x200.png">`
+          notSeen += `<img src="http://forkliftsystems.com.au/wp-content/uploads/2015/04/placeholder-200x200.png">`;
           notSeen += `<h3>${movie.Title}</h3>`;
           notSeen += `<p>${movie.Plot}</p>`;
           notSeen += `<p>${movie.Actors}`;
@@ -32,8 +34,8 @@ var movieAPI = ((movie) => {
         }
         $('#movies-seen').html(seen);
         $('#movies-cd not-seen').html(notSeen);
-      })
-  }
+      });
+  };
 
     movie.createLogoutButton = (apiKey) => {
         let uid = movieAPI.credentialsCurrentUser().uid;
