@@ -12,13 +12,15 @@ var movieAPI = ((movie) => {
 
       results.forEach((movie) => {
         if (movie.isSeen === true){
-          seen += `<div class="col-xs-4 card-container">`;
+          seen += `<div class="col-xs-4 card-container jumbotron">`;
           seen += `<span class="glyphicon glyphicon-remove pull-right"></span>`;
-          seen += `<img src="http://forkliftsystems.com.au/wp-content/uploads/2015/04/placeholder-200x200.png">`;
+          seen += `<img src="http://www.seriouseats.com/images/20110325-food-lab-tater-tots-mushy-center.jpg">`;
           seen += `<h3>${movie.Title}</h3>`;
           seen += `<p>${movie.Plot}</p>`;
           seen += `<p>${movie.Actors}`;
           seen += `<p>${movie.Year}</p>`;
+          seen += ` <div class="btn-group" data-toggle="buttons"><label class="btn btn-primary active"><input type="checkbox" checked autocomplete="off">Seen!</label>`;
+          seen += ` <label class="btn btn-primary"><input type="checkbox" autocomplete="off">Not Seen</label></div>`;
           seen += `<div class="ratingSystem container">`;
           seen += `<h6>Rating</h6>`;
           seen += `<input name="star" type="radio" class="star"/>`;
