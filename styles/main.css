@@ -16,7 +16,7 @@ body {
   background-color: #3D9970; }
 
 .jumbotron {
-  opacity: 0.8; }
+  opacity: 0.9; }
 
 h1 {
   font-weight: 900;
@@ -26,3 +26,6 @@ h1 {
 
 button {
   color: #39CCCC; }
+
+img {
+  width: 200px; }
